@@ -4,6 +4,8 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import { LazyPage1, LazyPage2, LazyPage3 } from "../01-lazyload/pages";
+
 
 import logo from '../logo.svg';
 
@@ -15,13 +17,13 @@ export const Navigation = () => {
           <img src={logo} alt="React Logo" />
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/lazy-page-1">Lazy Page 1</NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/lazy-page-2">Lazy Page 2</NavLink>
             </li>
             <li>
-              <NavLink to="/users">Users</NavLink>
+              <NavLink to="/lazy-page-3">Lazy Page 3</NavLink>
             </li>
           </ul>
         </nav>
@@ -29,9 +31,9 @@ export const Navigation = () => {
         {/* A <Routes> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
-          <Route path="/about" element={<h1>About</h1>} />
-          <Route path="/users" element={<h1>Users</h1>} />
+          <Route path="/lazy-page-1" element={<LazyPage1 />} />
+          <Route path="/lazy-page-2" element={<LazyPage2 />} />
+          <Route path="/lazy-page-3" element={<LazyPage3 />} />
         </Routes>
       </div>
     </Router>
